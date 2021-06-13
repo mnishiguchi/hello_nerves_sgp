@@ -1,13 +1,15 @@
 use Mix.Config
 
 # Configure your database
+# See https://hexdocs.pm/ecto_sqlite3/Ecto.Adapters.SQLite3.html#module-provided-options
+# for description of these configuration values
 config :hello_nerves_sgp_ui, HelloNervesSgpUi.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "hello_nerves_sgp_ui_dev",
-  hostname: "localhost",
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  database: "/tmp/database.db",
+  show_sensitive_data_on_connection_error: false,
+  journal_mode: :wal,
+  cache_size: -64000,
+  temp_store: :memory,
+  pool_size: 1
 
 # For development, we disable any cache and enable
 # debugging and code reloading.

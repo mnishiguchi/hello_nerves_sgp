@@ -4,17 +4,16 @@
 # remember to add this file to your .gitignore.
 use Mix.Config
 
-database_url =
-  System.get_env("DATABASE_URL") ||
-    raise """
-    environment variable DATABASE_URL is missing.
-    For example: ecto://USER:PASS@HOST/DATABASE
-    """
-
+# Configure your database
+# See https://hexdocs.pm/ecto_sqlite3/Ecto.Adapters.SQLite3.html#module-provided-options
+# for description of these configuration values
 config :hello_nerves_sgp_ui, HelloNervesSgpUi.Repo,
-  # ssl: true,
-  url: database_url,
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
+  database: "/data/hello_sqlite.db",
+  show_sensitive_data_on_connection_error: false,
+  journal_mode: :wal,
+  cache_size: -64000,
+  temp_store: :memory,
+  pool_size: 1
 
 secret_key_base =
   System.get_env("SECRET_KEY_BASE") ||
