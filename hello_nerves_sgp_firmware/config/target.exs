@@ -70,7 +70,7 @@ config :vintage_net,
        type: VintageNetEthernet,
        ipv4: %{method: :dhcp}
      }},
-     {"wlan0",
+    {"wlan0",
      %{
        type: VintageNetWiFi,
        vintage_net_wifi: %{

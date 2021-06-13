@@ -43,7 +43,8 @@ defmodule HelloNervesSgpFirmware.MixProject do
       {:sgp40, path: "../../sgp40", targets: @all_targets},
 
       # The Poncho subprojects
-      {:hello_nerves_sgp_ui, path: "../hello_nerves_sgp_ui", targets: @all_targets, env: Mix.env()},
+      {:hello_nerves_sgp_ui,
+       path: "../hello_nerves_sgp_ui", targets: @all_targets, env: Mix.env()},
 
       # Dependencies for specific targets
       {:nerves_system_rpi, "~> 1.13", runtime: false, targets: :rpi},

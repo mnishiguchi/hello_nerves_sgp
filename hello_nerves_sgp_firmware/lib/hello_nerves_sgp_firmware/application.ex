@@ -15,6 +15,7 @@ defmodule HelloNervesSgpFirmware.Application do
         # Children for all targets
         # Starts a worker by calling: HelloNervesSgpFirmware.Worker.start_link(arg)
         # {HelloNervesSgpFirmware.Worker, arg},
+        HelloNervesSgpFirmware.SensorWorker
       ] ++ children(target())
 
     Supervisor.start_link(children, opts)
